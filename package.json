@@ -1,0 +1,14 @@
+{
+  "name": "gpio-playground",
+  "version": "0.0.1",
+  "description": "getting started with raspi gpio in js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Al Zimmerman",
+  "license": "ISC",
+  "dependencies": {
+    "onoff": "^6.0.1"
+  }
+}
