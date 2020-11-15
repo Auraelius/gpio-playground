@@ -1,11 +1,11 @@
-class arduinix
 
-exports.printMsg = function () {
+
+printMsg = function () {
   console.log('This is a message from the arduinix package');
 };
 
 /* 
- * there can be only one arduinox in the current hardware architecture so 
+ * there can be only one arduinix in the current hardware architecture so 
  * this will be a singleton so these buffers should be the only ones for the system 
  * 
  * expects an array of eight strings matching "/^[0-9b\ ]+$/" (any numeral, or 'b', or ' ')
@@ -13,6 +13,7 @@ exports.printMsg = function () {
  */
 let currentTubes = ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']; // start with all tubes blank
 let nextTubes = ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'];  
+let numberOfPairs = currentTubes.length/2;
 
 exports.setNextTube(tubeDigits){
 
