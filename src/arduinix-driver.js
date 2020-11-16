@@ -15,7 +15,7 @@ let currentTubes = ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']; // start with all t
 let nextTubes = ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'];  
 let numberOfPairs = currentTubes.length/2;
 
-exports.setNextTube(tubeDigits){
+function setNextTube(tubeDigits){
 
   console.log(`setNextTube is running`)
 
@@ -26,3 +26,35 @@ exports.setNextTube(tubeDigits){
   nextTubes = Array.from(tubeDigits); //clone the array
   return true; 
 }
+
+/* 
+ * this is responsible for keeping the tubes lit
+ * it encapsulates all the storage and logic it needs
+ * it takes new numbers to be displayed from the tube queue at frequent intervals
+ * (at the end of the pair cycles)
+ * It uses the intensity value to set PWM values before lighting up the tube pair
+ * While the pair is lit the PWM duty cycle sets the intensity
+ * */
+
+
+
+function multiplexer (numberOfTubes ){
+
+//  this function is responsible for keeping the tubes lit
+  // use local storage for current tube values and intensities
+  // set up forever loop
+  
+  let tubePair = 0
+  let numberOfPairs = numberOfTubes/2
+
+
+  for (tubePair = 0; tubePair < numberOfPairs; tubePair++){
+    displayNumberPair(
+      tubePair,
+      currentTubes[tubePair],
+      currentTubes[tubePair + numberOfPairs]
+      )
+  }
+
+}
+
