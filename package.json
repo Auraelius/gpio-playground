@@ -9,7 +9,7 @@
   "author": "Al Zimmerman",
   "license": "ISC",
   "dependencies": {
-
+    "pigpio": "^3.2.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",
